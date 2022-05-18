@@ -1,0 +1,27 @@
+<h1>User Registration Form</h1>
+<form #registerForm="ngForm" id="form" >
+    <mat-form-field>
+        <input matInput placeholder="Email Address" [(ngModel)]="registrationData.email" name="email"  #email="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger" style="width: 340px; margin-top: -15px; height: 30px; line-height: 0px;">
+        Email Address Is Mandatory
+    </div>
+    
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="registrationData.password" name="password"  #password="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="width: 340px; margin-top: -15px; height: 30px; line-height: 0px;">
+        Password is Mandatory
+    </div>
+
+    <mat-form-field>
+        <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="registrationData.confirmpassword" name="confirmpassword"  #confirmpassword="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)" class="alert alert-danger" style="width: 340px; margin-top: -15px; height: 30px; line-height: 0px;">
+        Cinform Password is Mandatory
+    </div>
+
+    <button (click)="userRegistration()" [disabled] = "!registerForm.form.valid" >Register</button>
+    <a routerLink="/User-Authentication/Login" style="text-decoration: none; color: white; margin-left: 20px;">Click here if Already Registered User</a>
+    <!-- <button routerLink="/User-Authentication/Login" style="margin-left: 15px;">Login</button>   -->
+</form>

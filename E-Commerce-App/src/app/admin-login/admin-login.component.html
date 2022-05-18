@@ -1,0 +1,22 @@
+
+<h1>Admin Login Form</h1>
+<form  #loginForm="ngForm" id="form">
+    <mat-form-field>
+        <input matInput placeholder="Admin Email Adress" [(ngModel)]="adminLoginData.email" name="email"  #email="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger" style="width: 340px; margin-top: -15px; height: 30px; line-height: 0px;">
+        Email Adress Is Mandatory
+    </div>
+    
+    
+    <mat-form-field>
+        <input matInput type="password" placeholder="Enter Password" [(ngModel)]="adminLoginData.password" name="password"  #password="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="width: 340px; margin-top: -15px; height: 30px; line-height: 0px;">
+        Password is Mandatory
+    </div>
+
+    <button [disabled] = "!loginForm.form.valid" (click)="adminLogin()" style="margin-left: 5px;">Login</button>
+</form>
+
+    

@@ -1,0 +1,170 @@
+<!-- <div id="form">
+    <h2 class="page-title">Vehicle Specifications</h2>
+    <form  #addProductForm="ngForm" id="data">
+        <div class="form-group">
+            <label for="vehicleId">Vehicle Id :</label>
+            <input  type="number" class="form-control" [(ngModel)]="productDetails.vehicleId" name="vehicleId"  #vehicleId="ngModel" required />
+        </div>
+        <div *ngIf="vehicleBrandName.invalid && (vehicleBrandName.dirty || vehicleBrandName.touched)" class="alert alert-danger">
+            User Email is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleBrandName" style="margin-top: 15px;">Vehicle Company Name :</label>
+            <input value="53465" type="text" class="form-control" [(ngModel)]="productDetails.vehicleBrandName" name="vehicleBrandName"  #vehicleBrandName="ngModel" required />
+        </div>
+        <div *ngIf="vehicleBrandName.invalid && (vehicleBrandName.dirty || vehicleBrandName.touched)" class="alert alert-danger">
+            User Email is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleModel" style="margin-top: 15px;">Vehicle Model :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.vehicleModel" name="vehicleModel"  #vehicleModel="ngModel" required />
+        </div>
+        <div *ngIf="vehicleModel.invalid && (vehicleModel.dirty || vehicleModel.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="price" style="margin-top: 15px;">Vehicle Price :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.price" name="price"  #price="ngModel" required />
+        </div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="noOfSeats" style="margin-top: 15px;">No Of Seats :</label>
+            <input type="number" class="form-control" [(ngModel)]="productDetails.noOfSeats" name="noOfSeats"  #noOfSeats="ngModel" required />
+        </div>
+        <div *ngIf="noOfSeats.invalid && (noOfSeats.dirty || noOfSeats.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="fuelType" style="margin-top: 15px;">Fuel Type :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.fuelType" name="fuelType"  #fuelType="ngModel" required />
+        </div>
+        <div *ngIf="fuelType.invalid && (fuelType.dirty || fuelType.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="transmissionType" style="margin-top: 15px;">Transmission Type :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.transmissionType" name="transmissionType"  #transmissionType="ngModel" required />
+        </div>
+        <div *ngIf="transmissionType.invalid && (transmissionType.dirty || transmissionType.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="engineType" style="margin-top: 15px;">Engine Type :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.engineType" name="engineType"  #engineType="ngModel" required />
+        </div>
+        <div *ngIf="engineType.invalid && (engineType.dirty || engineType.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="dimensions" style="margin-top: 15px;">Dimensions Length X Width X Height (mm) :</label>
+            <input type="text" class="form-control" [(ngModel)]="productDetails.dimensions" name="dimensions"  #dimensions="ngModel" required />
+        </div>
+        div *ngIf="dimensions.invalid && (dimensions.dirty || dimensions.touched)" class="alert alert-danger">
+            User Password is Mandatory
+        </div>
+
+        <button type="submit" mat-button [disabled] = "!addProductForm.form.valid" (click)="addProduct()">Add Product</button>
+    </form>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="addProductForm">
+    <h2 class="page-title">Vehicle Specifications</h2>
+    <form [formGroup]="productDetailsForm" (ngSubmit) = "addProduct()" id="form">
+        <div class="form-group" >
+            <label>Vehicle Id :</label>
+            <input type="number" class="form-control" formControlName="vehicleId" required/>
+        </div>
+        <div *ngIf="vehicleId.invalid && (vehicleId.dirty || vehicleId.touched)" class="alert alert-danger">
+            vehicle Id is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleBrandName" style="margin-top: 15px;">Vehicle Company Name :</label>
+            <input type="text" class="form-control" formControlName="vehicleBrandName" required />
+        </div>
+        <div *ngIf="vehicleBrandName.invalid && (vehicleBrandName.dirty || vehicleBrandName.touched)" class="alert alert-danger">
+            Vehicle Company Name is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleModel" style="margin-top: 15px;">Vehicle Model :</label>
+            <input type="text" class="form-control" formControlName="vehicleModel" required />
+        </div>
+        <div *ngIf="vehicleModel.invalid && (vehicleModel.dirty || vehicleModel.touched)" class="alert alert-danger">
+            Vehicle Model is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="price" style="margin-top: 15px;">Vehicle Price :</label>
+            <input type="text" class="form-control" formControlName="price" required />
+        </div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+            Vehicle Price is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="noOfSeats" style="margin-top: 15px;">No Of Seats :</label>
+            <input type="number" class="form-control" formControlName="noOfSeats" required />
+        </div>
+        <div *ngIf="noOfSeats.invalid && (noOfSeats.dirty || noOfSeats.touched)" class="alert alert-danger">
+            Seating Capacity is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="fuelType" style="margin-top: 15px;">Fuel Type :</label>
+            <input type="text" class="form-control" formControlName="fuelType" required />
+        </div>
+        <div *ngIf="fuelType.invalid && (fuelType.dirty || fuelType.touched)" class="alert alert-danger">
+            Fuel Type is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="transmissionType" style="margin-top: 15px;">Transmission Type :</label>
+            <input type="text" class="form-control" formControlName="transmissionType" required />
+        </div>
+        <div *ngIf="transmissionType.invalid && (transmissionType.dirty || transmissionType.touched)" class="alert alert-danger">
+           Transmission Type is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="engineType" style="margin-top: 15px;">Engine Type :</label>
+            <input type="text" class="form-control" formControlName="engineType" required />
+        </div>
+        <div *ngIf="engineType.invalid && (engineType.dirty || engineType.touched)" class="alert alert-danger">
+            Engine Type is Mandatory
+        </div>
+
+        <div class="form-group">
+            <label for="dimensions" style="margin-top: 15px;">Dimensions Length X Width X Height (mm) :</label>
+            <input type="text" class="form-control" formControlName="dimensions" required />
+        </div>
+        <div *ngIf="dimensions.invalid && (dimensions.dirty || dimensions.touched)" class="alert alert-danger">
+            Vehicle Dimensions is Mandatory
+        </div>
+
+        <button [disabled] = "!productDetailsForm.valid" type="submit" >Submit</button>
+        <button [disabled] = "!productDetailsForm.valid" type="submit" (click)="updateProduct(productDetailsForm.value,productDetailsForm.value.vehicleId)" style="margin-left: 20px;">Update</button>
+    </form>
+</div>
+

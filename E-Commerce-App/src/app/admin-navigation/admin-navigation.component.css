@@ -1,0 +1,17 @@
+.sidenav-container {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+
+.sidenav 
+{
+  width: 200px;
+  position:absolute;
+}
+
+#logout:hover
+{
+  cursor: pointer;
+}

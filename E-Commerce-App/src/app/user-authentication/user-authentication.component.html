@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <a routerLink="/home" style="text-decoration: none; color: rgba(255, 255, 255, 0.863);">E-Commerce Automotive</a>
+  <div id="admin" style="display: flex;margin-left: 71%;" routerLink="/Admin-Authentication/Login">
+    <div class="material-icons" style="margin-top: 3px;">manage_accounts</div>
+    <div style="margin-left: 4px;">Admin</div>
+  </div>
+  
+  <!-- <a routerLink="/Admin-Authentication/Login" style="margin-left: 71%; font-weight: 500; font-size: 19px; text-decoration: none; color: white;"><div class="material-icons" style="margin-top: 10px;margin-right: 4px;">manage_accounts</div>Admin</a> -->
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav  #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'" [opened]="true">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/User-Authentication/Registration"  style="margin-left: 10px;"><mat-icon style="text-indent: -6px; margin-top: -4px;">how_to_reg</mat-icon>User Registration</a>
+      <a mat-list-item routerLink="/User-Authentication/Login" style="margin-left: 5px;"><mat-icon style="text-indent: -6px; margin-top: -4px;">login</mat-icon>User Login</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Add Content Here -->
+    <router-outlet>
+            
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,16 @@
+{
+  "cartDetails": [
+    {
+      "vehicleId": 2,
+      "vehicleBrandName": "TATA",
+      "vehicleModel": "Harrier",
+      "price": "14.52 - 21.81 Lakh",
+      "noOfSeats": 5,
+      "fuelType": "Diesel",
+      "transmissionType": "Automatic",
+      "engineType": "Kryotec 2.0 L Turbocharged Engine",
+      "dimensions": "4598 x 1894 x 1706",
+      "id": 2
+    }
+  ]
+}

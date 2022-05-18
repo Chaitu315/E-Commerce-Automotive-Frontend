@@ -1,0 +1,45 @@
+
+<div id="images">
+    <mat-card id="cards"  *ngFor="let vehicle of vehicles ">
+        <a routerLink="Product/{{vehicle.vehicleId}}">
+            <img src="./assets/{{vehicle.vehicleModel}}.png">
+            <mat-card-content id="data" style="display: flex;">
+                <div>
+                    <mat-card-subtitle > 
+                        <h2 style="margin-top: 4px; margin-left: 170px;">{{vehicle.vehicleBrandName}} {{ vehicle.vehicleModel}}</h2>
+                    </mat-card-subtitle>
+                    
+                    <mat-card-subtitle>
+                        Price : ₹ {{vehicle.price}}*  Get on Road Price
+                    </mat-card-subtitle>
+    
+                    <mat-card-subtitle>
+                        Fuel Type : {{vehicle.fuelType}} 
+                    </mat-card-subtitle>
+    
+                    <mat-card-subtitle>
+                        Engine Type : {{vehicle.engineType}} 
+                    </mat-card-subtitle>
+    
+                    <mat-card-subtitle>
+                        Transmission Type : {{vehicle.transmissionType}} 
+                    </mat-card-subtitle>
+    
+                    <mat-card-subtitle>
+                        Seating Capacity : {{vehicle.noOfSeats}} 
+                    </mat-card-subtitle>
+                    
+                    <mat-card-subtitle>
+                        Length*Width*Height : {{vehicle.dimensions}} 
+                    </mat-card-subtitle>
+                </div>
+                
+                <div style="margin-top: 120px; margin-left: 40px;">
+                    <button (click)="addToCart(vehicle)" style="width: 115px;padding: 5px; border: 1px solid rgba(255, 217, 0, 0.63); background-color: rgba(255, 255, 0, 0.781); border-radius: 5px; font-size: 15px; font-weight: 500; color: rgba(0, 0, 0, 0.822);"><div><mat-icon style="float: left; margin-top: -2px;">shopping_cart</mat-icon></div>Add To Cart</button>
+                </div>
+            </mat-card-content>
+        </a>
+    </mat-card>
+</div>
+
+    

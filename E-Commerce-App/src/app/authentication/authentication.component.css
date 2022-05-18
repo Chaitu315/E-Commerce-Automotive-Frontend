@@ -1,0 +1,25 @@
+div>div>a>img
+{
+    width: 120px;
+    height: 120px;
+    margin-left: 80px;
+}
+
+div>div
+{
+    margin-left: 160px;
+    display: flex;
+    margin-top: 100px;
+}
+
+#login
+{
+    margin-top: -5px;
+    margin-left: 438px;
+    color: rgba(255, 0, 0, 0.699);
+}
+
+#login:hover
+{
+    cursor: pointer;
+}
